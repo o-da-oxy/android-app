@@ -16,6 +16,7 @@ import com.example.domain.usecase.ElementByIdUseCase
 import com.example.domain.usecase.ListUseCase
 import com.example.androidapp.details.vm.DetailsViewModel
 import com.example.androidapp.main.vm.MainViewModel
+import com.example.data.repository.ListRepositoryImpl
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -33,7 +34,7 @@ val appModule = module {
     }
     single<LocalStorageRepository> { LocalStorageRepositoryImpl(get()) }
     single<CacheRepository> { CacheRepositoryImpl() }
-    single<ListRepository> { NetworkRepository(get(), get()) }
+    single<ListRepository> { ListRepositoryImpl() }
     single { ListUseCase(get(), get()) }
     single { ElementByIdUseCase(get(), get(), get()) }
     single<Mapper<ListElement, ListElementEntity>> { ListElementMapper(get()) }

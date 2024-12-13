@@ -9,11 +9,10 @@ import kotlinx.coroutines.withContext
 
 class ListRepositoryImpl : ListRepository {
     override suspend fun getList(): List<ListElement> = withContext(Dispatchers.IO) {
-        delay(5_000)
         return@withContext listOf(
             ListElement(
                 id = 0,
-                image = "https://avatars.mds.yandex.net/i?id=df6f0a9b59a9738610c34882daea14963b51056a-8249766-images-thumbs&n=13",
+                image = "https://avatars.mds.yandex.net/i?id=2e6e8e0e9f29f28e46ced0815445e2a4_sr-4580368-images-thumbs&n=13",
                 title = "title",
                 subtitle = "test",
                 button = ListButton(
@@ -22,7 +21,7 @@ class ListRepositoryImpl : ListRepository {
             ),
             ListElement(
                 id = 1,
-                image = "https://avatars.mds.yandex.net/i?id=df6f0a9b59a9738610c34882daea14963b51056a-8249766-images-thumbs&n=13",
+                image = "https://avatars.mds.yandex.net/i?id=2e6e8e0e9f29f28e46ced0815445e2a4_sr-4580368-images-thumbs&n=13",
                 title = "title",
                 subtitle = "test",
                 button = ListButton(
@@ -31,7 +30,7 @@ class ListRepositoryImpl : ListRepository {
             ),
             ListElement(
                 id = 2,
-                image = "https://avatars.mds.yandex.net/i?id=df6f0a9b59a9738610c34882daea14963b51056a-8249766-images-thumbs&n=13",
+                image = "https://avatars.mds.yandex.net/i?id=2e6e8e0e9f29f28e46ced0815445e2a4_sr-4580368-images-thumbs&n=13",
                 title = "title",
                 subtitle = "test",
                 button = ListButton(
@@ -40,7 +39,7 @@ class ListRepositoryImpl : ListRepository {
             ),
             ListElement(
                 id = 3,
-                image = "https://avatars.mds.yandex.net/i?id=df6f0a9b59a9738610c34882daea14963b51056a-8249766-images-thumbs&n=13",
+                image = "https://avatars.mds.yandex.net/i?id=2e6e8e0e9f29f28e46ced0815445e2a4_sr-4580368-images-thumbs&n=13",
                 title = "title",
                 subtitle = "test",
                 button = ListButton(
@@ -53,7 +52,7 @@ class ListRepositoryImpl : ListRepository {
     override suspend fun getElement(id: Long): ListElement {
         return ListElement(
             id = 0,
-            image = "https://avatars.mds.yandex.net/i?id=df6f0a9b59a9738610c34882daea14963b51056a-8249766-images-thumbs&n=13",
+            image = "https://avatars.mds.yandex.net/i?id=2e6e8e0e9f29f28e46ced0815445e2a4_sr-4580368-images-thumbs&n=13",
             title = "title",
             subtitle = "test",
             button = ListButton(

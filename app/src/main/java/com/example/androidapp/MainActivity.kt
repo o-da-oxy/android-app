@@ -1,5 +1,7 @@
 package com.example.androidapp
 
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -20,11 +22,25 @@ import com.example.androidapp.details.DetailsScreen
 import com.example.androidapp.details.DetailsScreenRoute
 import com.example.androidapp.main.MainScreen
 import com.example.androidapp.main.MainScreenRoute
+import com.example.androidapp.service.AudioService
 import com.example.androidapp.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requestPermissions(
+                arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),
+                100
+            )
+        }
+        Intent(this, AudioService::class.java).also { intent ->
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(intent)
+            } else {
+                startService(intent)
+            }
+        }
         setContent {
             AppTheme {
                 // A surface container using the 'background' color from the theme
